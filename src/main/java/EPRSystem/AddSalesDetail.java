@@ -20,13 +20,16 @@ public class AddSalesDetail extends WebActions {
 			String searchPstCat, String searchcontCap, String searchFinYear, String gstNum, String bankAcNo,
 			String ifscCode, String gstPaid, String gstInNo, String plastQuan)
 			throws InterruptedException, IOException {
+		
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		Thread.sleep(15000);
-		driver.findElement(By.xpath("//*[@title=\"PIBO Operations\"]")).click();
-		driver.findElement(By.xpath("//*[@title=\"Sales Details\"]")).click();
-		Thread.sleep(7000);
+		
+//		driver.findElement(By.xpath("//*[@title=\"PIBO Operations\"]")).click();
+//		driver.findElement(By.xpath("//*[@title=\"Sales Details\"]")).click();
+//		Thread.sleep(5000);
 
 		driver.findElement(By.xpath("//*[text()='Add New ']")).click();
+		Thread.sleep(5000);
 
 		String regiTypefieldName = "registration_type";
 		dropDownSearchSelect(regiTypefieldName, searchRegType);
@@ -96,5 +99,8 @@ public class AddSalesDetail extends WebActions {
 
 		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.id("openConfirmationHeader")));
 		driver.findElement(By.xpath("//*[text()='Confirm']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//*[text()=' Close ']")).click();
+		Thread.sleep(5000);
 	}
 }

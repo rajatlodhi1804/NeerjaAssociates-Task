@@ -2,6 +2,7 @@ package EPRSystem_Test;
 
 import java.io.IOException;
 
+import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import EPRSystem.AddSalesDetail;
@@ -13,7 +14,11 @@ public class AddSales extends BaseTest {
 		int entries = 10;
 		AddSalesDetail sales = new AddSalesDetail(driver);
 		String filePath = "E:\\Code\\org.neerjaassociates\\src\\test\\java\\Resources\\AutomationTest-1.xlsx";
-
+		
+		driver.findElement(By.xpath("//*[@title=\"PIBO Operations\"]")).click();
+		driver.findElement(By.xpath("//*[@title=\"Sales Details\"]")).click();
+		Thread.sleep(5000);
+		
 		for (int i = 0; i < entries; i++) {
 			String searchRegType = ExcelUtils.readExcel(filePath, 0, i + 1, 1);
 			String typeStyle = "Entity";

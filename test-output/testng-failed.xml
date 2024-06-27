@@ -3,13 +3,6 @@
 <suite name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="MyTest(failed)">
     <classes>
-      <class name="EPRSystem_Test.ERPSignInTest">
-        <methods>
-          <include name="setUpEnv"/>
-          <include name="tearDown"/>
-          <include name="test"/>
-        </methods>
-      </class> <!-- EPRSystem_Test.ERPSignInTest -->
       <class name="EPRSystem_Test.AddSales">
         <methods>
           <include name="addSales"/>

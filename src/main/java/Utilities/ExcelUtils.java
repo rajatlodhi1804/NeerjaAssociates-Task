@@ -1,6 +1,7 @@
 package Utilities;
 
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,10 +15,18 @@ public class ExcelUtils {
 		Sheet sheet = workbook.getSheetAt(sheetIndex);
 		Row row = sheet.getRow(rowIndex);
 		Cell cell = row.getCell(cellIndex);
-		String cellValue = cell.getStringCellValue();
-		workbook.close();
-		fileInputStream.close();
-		return cellValue;
+		if (cell != null && cell.getCellType() == CellType.NUMERIC) {
+			long cellValue = (long) cell.getNumericCellValue();
+			String cellValToStr = String.valueOf(cellValue);
+			workbook.close();
+			fileInputStream.close();
+			return cellValToStr;
+		} else {
+			String cellValue = cell.getStringCellValue();
+			workbook.close();
+			fileInputStream.close();
+			return cellValue;
+		}
 	}
 
 	// Write data to Excel file
