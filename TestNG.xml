@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="MyTestSuite">
+	<test name="MyTest">
+		<classes>
+			<class name="EPRSystem_Test.ERPSignInTest" />
+			<class name="EPRSystem_Test.AddSales" />
+		</classes>
+	</test>
+	<!-- You can define more tests within the same suite -->
+</suite>

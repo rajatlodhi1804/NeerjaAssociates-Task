@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [MyTestSuite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="MyTest(failed)">
+    <classes>
+      <class name="EPRSystem_Test.ERPSignInTest">
+        <methods>
+          <include name="setUpEnv"/>
+          <include name="tearDown"/>
+          <include name="test"/>
+        </methods>
+      </class> <!-- EPRSystem_Test.ERPSignInTest -->
+      <class name="EPRSystem_Test.AddSales">
+        <methods>
+          <include name="addSales"/>
+          <include name="setUpEnv"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- EPRSystem_Test.AddSales -->
+    </classes>
+  </test> <!-- MyTest(failed) -->
+</suite> <!-- Failed suite [MyTestSuite] -->
